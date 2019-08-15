@@ -1,9 +1,45 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Agregar Persona
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content padding>
+    <form #contactSourceNew="ngForm" (ngSubmit)="onSubmit(contactSourceNew)" class="col-md-5">
+        <p>
+          <label for="name">Nombre</label>
+          <ion-input type="text" name="name" #name="ngModel" [(ngModel)]="persona.name" class="form-control" required ></ion-input>
+
+          <label for="seconame">Segundo Nombre</label>
+          <ion-input type="text" name="seconame" #seconame="ngModel" [(ngModel)]="persona.seconame" class="form-control" required ></ion-input>
+
+          <label for="lastname">Apellido</label>
+          <ion-input type="text" name="lastname" #lastname="ngModel" [(ngModel)]="persona.lastname" class="form-control" required ></ion-input>
+
+          <label for="lastseconame">Segundo Apellido</label>
+          <ion-input type="text" name="lastseconame" #lastseconame="ngModel" [(ngModel)]="persona.lastseconame" class="form-control" required ></ion-input>
+
+          <label for="sexo">Sexo</label>
+          <ion-select type="text" name="sexo" #sexo="ngModel" [(ngModel)]="persona.sexo" class="form-control" required >
+            <ion-select-option value="HOMBRE">Hombre</ion-select-option>
+            <ion-select-option value="MUJER">Mujer</ion-select-option>
+          </ion-select>
+
+          <label for="estado">Estado</label>
+          <ion-select type="text" name="estado" #estado="ngModel" [(ngModel)]="persona.estado" class="form-control" required >
+            <ion-select-option value="DURANGO">Durango</ion-select-option>
+            <ion-select-option value="QUERETARO">Queretaro</ion-select-option>
+          </ion-select>
+
+          <label for="nacimiento">Fecha de nacimiento</label>
+          <ion-datetime displayFormat="YYYY-MM-DD" min="1950-03-14" max="2019-12-09" name="nacimiento" #nacimiento="ngModel" [(ngModel)]="persona.nacimiento" class="form-control" required ></ion-datetime>
+          
+        </p>
+
+        
+        <!--Botoon-->
+        <input type="submit" value="Guardar" class="btn btn-success">
+      </form>
+</ion-content>

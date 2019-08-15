@@ -1,0 +1,7 @@
+{
+    "/api/*": {
+      "target": "http://localhost/borog/api/public",
+      "secure": false,
+      "changeOrigin": true
+    }
+  }
